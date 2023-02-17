@@ -1,3 +1,5 @@
+import static org.junit.Assert.assertArrayEquals;
+
 //see test cases.
 public class ArraysAreEqual {
     /**
@@ -15,6 +17,16 @@ public class ArraysAreEqual {
      * @return true if the values of a are equal to the values of b.
      */
     public boolean equal(int[] a, int[] b){
-        return false;
+        int counter = 0;
+        // not optimal but gonna force while loop
+       while(counter < a.length){
+        int tempA = a[counter];
+        int tempB = b[counter];
+
+        if( tempA != tempB ){ return false; } // if the array temp values mismatch, the arrays are not alike
+        counter++; 
+       }
+       // if it reaches here, the arrays are the same
+       return true;
     }
 }
